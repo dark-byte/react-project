@@ -1,4 +1,4 @@
 ## Learning React
 Projects:
 
-#### 1. Notes App
+#### 1. To-Do App
