@@ -1,22 +1,25 @@
 import React from 'react'
 
-const Form = ({ setInpText, setTodo }) =>{
+function Form ({todos, inputText, setInpText, setTodos}){
 
     const textChangeHandler = (e) =>{
         setInpText(e.target.value);
+        console.log(e.target.value, inputText);
+        
     };
 
     const btnHandler = (e) =>{
         e.preventDefault();
-        console.log(e)
-        setTodo.append()
+        setTodos([...todos, {title: inputText, id: Math.random()},])
+        setInpText("")
+        console.log(todos)
     };
 
     return(
         <div className="Container">
-            <form onSubmit={btnHandler} className="input">
-                <input onChange={textChangeHandler} type="text" id="inp" placeholder="Enter Title" className="inp"/>
-                <input type="submit" className="add" value="Add"/>
+            <form className="input">
+                <input value={inputText} onChange={textChangeHandler} type="text" id="inp" placeholder="Enter Title" className="inp"/>
+                <input onClick={btnHandler} type="submit" className="add" value="add"/>
             </form>
         </div>
     );

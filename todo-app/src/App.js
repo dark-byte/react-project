@@ -1,32 +1,22 @@
-import React, {Component, useState} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Form from './Components/Form'
-import Cat from './Components/cat'
+// import Cat from './Components/cat'
+
 
 function App() {
-
   const[inputText, setInpText] = useState("");
-  const[todos, setTodos] = useState([])
+  const[todos, setTodos] = useState([]);
 
   return (
     <div className="appContainer">
       <header className="header">
-        take notes {inputText}
+        <h1>take notes</h1>
       </header>
-      <Form setInpText={setInpText} setTodos= {setTodos}/>
-      <Cat/>
+      <Form inputText = {inputText} setInpText={setInpText} todos = {todos} setTodos= {setTodos}/>
+      {/* <Cat/> */}
     </div>
   );
 }
-
-
-// function addCat({cat}){
-//   return(
-//     <li>
-//       <p>{cat}</p>
-//     </li>
-//   )
-  
-// }
 
 export default App;
