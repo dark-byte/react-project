@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import Form from './Components/Form'
-// import Cat from './Components/cat'
+import TodoList from './Components/TodoList'
 
 
 function App() {
@@ -14,7 +14,8 @@ function App() {
         <h1>take notes</h1>
       </header>
       <Form inputText = {inputText} setInpText={setInpText} todos = {todos} setTodos= {setTodos}/>
-      {/* <Cat/> */}
+
+      <TodoList inputText = {inputText} setTodos={setTodos} todos = {todos}/>
     </div>
   );
 }
